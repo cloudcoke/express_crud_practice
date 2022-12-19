@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/write.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>글쓰기</h1>
+      <div id="contents">
+        <table>
+          <colgroup>
+            <col width="12%" />
+            <col width="*" />
+          </colgroup>
+          <tbody>
+            <form action="/write" method="post">
+              <tr>
+                <th>제목</th>
+                <td><input type="text" name="title" style="width: 80%" /></td>
+              </tr>
+              <tr>
+                <th>작성자</th>
+                <td><input type="text" name="writer" /></td>
+              </tr>
+              <tr>
+                <th>내용</th>
+                <td><textarea name="content" style="width: 80%; height: 200px"></textarea></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button type="submit" id="write-btn">작성</button>
+                  <a href="/list" id="cancle-btn">취소</a>
+                </td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

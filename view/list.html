@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/list.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>게시판 목록</h1>
+      <table>
+        <colgroup>
+          <col width="7%" />
+          <col width="*" />
+          <col width="10%" />
+          <col width="10%" />
+          <col width="10%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <td id="num">번호</td>
+            <td id="title">제목</td>
+            <td id="writer">작성자</td>
+            <td id="date">작성일</td>
+            <td id="views">조회수</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in list %}
+          <tr>
+            <td>{{loop.index-1}}</td>
+            <td class="title"><a href="/view?index={{loop.index-1}}">{{item.title}}</a></td>
+            <td>{{item.writer}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.views}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div id="bottom">
+        <div id="write-btn-wrap">
+          <a href="/write">글쓰기</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

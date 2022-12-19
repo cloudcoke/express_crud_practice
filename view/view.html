@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/view.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <table>
+        <colgroup>
+          <col width="10%" />
+          <col width="*" />
+          <col width="10%" />
+          <col width="20%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th id="title">제목</th>
+            <td>{{title}}</td>
+            <th id="writer">작성자</th>
+            <td>{{writer}}</td>
+          </tr>
+          <tr>
+            <th id="date">작성일</th>
+            <td>{{date}}</td>
+            <th id="views">조회수</th>
+            <td>{{views}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4">{{content}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="bottom">
+        <a href="/modify?index={{index}}">수정</a>
+        <a href="/delete?index={{index}}">삭제</a>
+        <a href="/list">목록</a>
+      </div>
+    </div>
+  </body>
+</html>
