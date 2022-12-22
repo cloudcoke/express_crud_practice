@@ -5,18 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/css/modify.css" />
   </head>
   <body>
-    <h1>수정</h1>
-    <form action="/modify?index={{index}}" method="post">
-      <div>제목: <input type="text" name="title" value="{{title}}" /></div>
-      <div>작성자: <input type="text" name="writer" value="{{writer}}" /></div>
-      <div>
-        내용 <br />
-        <textarea name="content">{{content}}</textarea>
+    <div id="wrap">
+      <h1>글쓰기</h1>
+      <div id="contents">
+        <table>
+          <colgroup>
+            <col width="12%" />
+            <col width="*" />
+          </colgroup>
+          <tbody>
+            <form action="/modify?index={{index}}" method="post">
+              <tr>
+                <th>제목</th>
+                <td><input type="text" name="title" value="{{title}}" style="width: 80%" /></td>
+              </tr>
+              <tr>
+                <th>작성자</th>
+                <td><input type="text" name="writer" value="{{writer}}" /></td>
+              </tr>
+              <tr>
+                <th>내용</th>
+                <td><textarea name="content" style="width: 80%; height: 200px">{{content}}</textarea></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button type="submit" id="write-btn">작성</button>
+                  <a href="/view?index={{index}}" id="cancle-btn">취소</a>
+                </td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
       </div>
-      <button type="submit">수정완료</button>
-    </form>
-    <button><a href="/view?index={{index}}">뒤로가기</a></button>
+    </div>
   </body>
 </html>
